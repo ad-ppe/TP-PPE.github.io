@@ -1,0 +1,167 @@
+/* Structure générale */
+body {
+    font-family: 'Roboto', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f9f7f3;
+}
+
+/* En-tête */
+header {
+    background-color: #155515;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+nav ul li a:visited {
+    color: #800080; /* Par exemple, un violet pour les liens visités */
+}
+
+/* Layout en Grid */
+section {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr; /* 1 colonne par défaut */
+    grid-gap: 20px; /* Espacement entre les éléments */
+    text-align: center;
+}
+
+/* Exemple de disposition pour les images et contenu */
+#services, #structures {
+    grid-template-columns: 1fr 1fr; /* 2 colonnes : texte + image */
+    align-items: center; /* Centrer verticalement */
+}
+
+section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#background {
+    background-image: url('img/CSS Font page.jpg');
+    background-size: 300px;
+    background-position-x: 250px;
+    background-position-y: 150px;
+    background-repeat: no-repeat;
+}
+
+#services {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Arrière-plan avec image pour la section des structures sportives */
+#structures {
+
+    padding: 20px;
+    text-align: center;
+}
+
+#articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 3 colonnes pour aligner les articles à l'horizontale */
+    grid-gap: 20px; /* Espacement entre les articles */
+    padding: 20px;
+}
+
+.articles {
+    background-color: #f9f9f9;
+    border: 1px solid #dddddd;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#contact {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Formulaire de contact */
+form {
+    display: grid;
+    grid-template-columns: 1fr; /* Formulaire en une seule colonne */
+    grid-gap: 10px;
+}
+
+form label, form input, form textarea {
+    width: 100%;
+}
+
+form textarea {
+    height: 150px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-top: 2px solid #333333;
+}
+
+/* Media Queries pour le responsive */
+@media (max-width: 600px) {
+    body {
+        padding: 0 5px;
+    }
+
+    #services, #structures {
+        grid-template-columns: 1fr; /* Passage en 1 seule colonne sur mobile */
+    }
+
+    #articles {
+        grid-template-columns: 1fr; /* 1 colonne sur petits écrans */
+    }
+
+    nav ul li {
+        display: block; /* Affiche les liens de navigation en bloc sur les petits écrans */
+        margin: 10px 0; /* Espacement vertical entre les liens */
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    #articles {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur les écrans moyens */
+    }
+}
